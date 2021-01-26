@@ -29,7 +29,8 @@ for(var i = 0; i < workHours.length; i++){
     
     var saveButton = $("<button>");
     saveButton.addClass("saveBtn");    
-    saveButton.addClass("col-1");    
+    saveButton.addClass("col-1");
+    saveButton.append('<i class="fas fa-save"></i>');   
     
     timeBlocks.append(hourlyTime);
     timeBlocks.append(messageText);
