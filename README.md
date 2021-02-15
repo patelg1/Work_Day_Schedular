@@ -15,4 +15,4 @@ Repository URL: https://github.com/patelg1/Work_Day_Schedular
 
 ## Usage 
 
-![Workday_Schedular_screenshot](assets/workday_planner_screenshot.png)
+![Workday_Schedular_gif](assets/workday_demo.gif)
