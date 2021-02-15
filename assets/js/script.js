@@ -3,7 +3,7 @@
 // Variables to get current date and time from day.js
 var currentDate = dayjs().format("dddd, MMMM D, YYYY")
 $("#currentDay").text(currentDate);
-var currentHour = dayjs().format("h")
+var currentHour = parseInt(dayjs().format("H"))
 console.log(currentHour);
 
 // Array to hold the hours in a workday
@@ -31,9 +31,10 @@ $(document).ready(function(){
             messageText.addClass("col-10");
             
             // Conditional statement to check if the current time is in the past, present or future
-            if (i < currentHour){
+            console.log(i+9 + " vs. " + currentHour)
+            if (i+9 < currentHour){
                 messageText.addClass("past");
-            }else if (i === currentHour){
+            }else if (i+9 === currentHour){
                 messageText.addClass("present");
             }else{
                 messageText.addClass("future");    
@@ -60,10 +61,12 @@ $(document).ready(function(){
     $(".saveBtn").on("click", function(event){
         event.preventDefault();
         var value = $(this).siblings(".description").val();
-        var hours = $(this).siblings(".hour").val();
+        var hours = $(this).siblings(".hour").text();
+
+        console.log("Key: " + hours + ", Value: " + value)
         
         localStorage.setItem(hours, value);
-        console.log(localStorage.getItem("#0"));
+        
 
     })
 
